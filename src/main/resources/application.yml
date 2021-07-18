@@ -1,0 +1,28 @@
+server:
+  error:
+    include-stacktrace: on-param
+    
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/essentials_db
+    username: essentials
+    password: essentials
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+info:
+  app: Spring Boot Essentials by DevDojo @marlonsouza
+  github: https://github.com/marlonsouza/spring-essentials

@@ -1,0 +1,19 @@
+version: '3.1'
+services:
+  #DB Postgres
+  people-postgres:
+    image: 'postgres:13.2-alpine'
+    container_name: essentials-postgres
+    volumes:
+      - essentials-data:/var/lib/postgresql/data
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=essentials_db
+      - POSTGRES_USER=essentials
+      - POSTGRES_PASSWORD=essentials
+
+volumes:
+  essentials-data:
